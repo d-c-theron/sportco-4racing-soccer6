@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  const value = 'World';
-  return <div>Hello {value}</div>;
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    (async function () {
+      const { title } = await( await fetch(`/api/GetArticles`)).json();
+      setData(title);
+    })();
+  });
+
+  return <div>{data}</div>;
 }
 
 export default App;
