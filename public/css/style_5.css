@@ -1,0 +1,575 @@
+/* Changes for Mobile Devices */
+@media only screen and (max-width: 64em) { 
+    #blackfooter ul, #blackfooter h5 {
+        text-align: center;
+    }
+    .toptipstable th, .toptipstable td, .toptipstable tr {
+        padding:0 !important;
+        margin:0 !important;
+        word-wrap: break-word;
+    }
+    .pooltable th, .pooltable td {
+        padding:0 !important;
+    }
+} 
+
+h1 {
+    font-size: 2.25em;
+}
+
+/* Generic */
+.borderradius10 {
+    border-radius: 10px;
+}
+body {
+    background-color: #ebecee;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:normal;
+}
+#container {
+    background-color: #FFFFFF;
+}
+.divider {
+    border-bottom: 1px solid #d2d2d4;
+    height: 1px;
+    width: 100%;
+    float: left;
+}
+.sectionheader {
+    background-color: #ebecee;
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    font-weight: bold;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.sectionheader.nospace {
+    margin-bottom:0;
+}
+
+.specialnote {
+    background-color: #ebecee;
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 0.8em;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.nopadding {
+    padding:0;
+}
+
+#maincontent p {
+    font-size: 14px;
+}
+#big-payouts-slider {
+    max-width: 100% !important;
+}
+.bjqs-markers {
+    display: none;
+}
+#big-payouts-slider img {
+    width: 100% !important;
+}
+.bold {
+    font-weight: bold;
+}
+#recent-payouts-slider ul {
+    border: 2px solid #E8BF19;
+}
+
+/* Logo (in the foundation top-bar) */
+#topbarlogo {
+    width: 110px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Header (Login / Register) */
+#loginbar {
+    background-color: #ebecee;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+#loginbar form {
+    display: inline;
+}
+#loginbar input {
+    display: inline;
+}
+#loginbar .button {
+    border: 1px solid #E8BF19;
+}
+#loginbar4R {
+    padding-left: 0px;
+    padding-bottom: 8px;
+    float: left;
+}
+#TelebetAccount {
+    width: 120px;
+}
+#pin {
+    width: 100px;
+}
+.mobilelogin {
+    text-align: center;
+    margin-top: 10px;
+}
+.mobilelogin form {
+    margin-bottom:0 !important;
+}
+.mobilelogin input {
+    margin:0 auto;
+    width: 100% !important;
+}
+.mobilelogin .button {
+    width: 100%;
+    margin-bottom:0 !important;
+}
+
+/* "SECURED BY THAWTE" */
+#officialtabbetting {
+    margin-bottom: 10px;
+}
+#officialtabbetting h4 {
+    color: #59595b;
+}
+#securityheader h4 {
+    color: #59595b;
+}
+
+
+.videohalf {
+    width: 252px;
+    height: 206px;
+    float: left;
+}
+
+/* Soccer Grid */
+#soccergrid, #recentpayouts, #tabsportdownload, #horseracinglink {
+    border: 2px solid #001489;
+}
+#soccergrid-new {
+    border: 2px solid black;
+}
+#tabsportdownload {
+    border-bottom:0;
+}
+#horseracinglink {
+    border-top: 2px solid #E8BF19;
+}
+
+
+/* New Upcoming Tabs */
+#newtabs img {
+    width: 30px;
+    height: 30px;
+}
+#newtabs a {
+
+}
+#newtabs section {
+    background-color: #ebecee;
+}
+#newtabs .content {
+    padding: 5px;
+}
+#newtabs table tr th, #newtabs table tr td {
+    padding: 0;
+}
+
+/* Upcoming Pools (Tabs) */
+.pools {
+    float: right;
+}
+.pooldateindicator {
+    padding: 5px !important;
+    background-color: #db1d36;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    float: left;
+}
+.pooldateindicator4R {
+    padding: 5px !important;
+    background-color: #00b74f;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    float: left;
+}
+.pooltable {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.pooltable td, .pooltable th {
+    text-align: left;
+}
+.pooltable td:first-child {
+    width: 10%;
+}
+.pooltable td:nth-child(3){
+    width: 10%;
+}
+.pooltable td:nth-child(2), .pooltable td:nth-child(4){
+    width: 30%;
+}
+.pooltable td:nth-child(4),.pooltable th:nth-child(4){
+    text-align: right;
+}
+.panel.poolinformation {
+    text-align: center;
+    overflow:auto !important;
+    font-weight: bold;
+}
+.panel.poolinformation .button {
+    margin-top: 15px !important;
+}
+
+/* Latest News */
+.newsitem {
+    margin-bottom: 20px;
+    float: left;
+    width: 100%;
+}
+.newsitem h3 {
+    font-size: 16px;
+    margin:0;
+    padding:0;
+}
+.newsdate, .newscategory {
+    font-size: 10px;
+    margin:0;
+    padding:0;
+}
+.newsitem p, .newsitem a {
+    font-size: 12px;
+}
+.newsimage {
+    float: left;
+    margin-right: 15px;
+    width: 40px;
+    margin-top: 5px;
+    height: auto;
+}
+.newsexcerpt {
+
+}
+.readmorelink {
+    float: right;
+    /* color: #db1d36;
+    text-decoration: none; */
+}
+.readmorelink:hover {
+    /* 
+    text-decoration: underline;
+    color: #db1d36;
+    */
+}
+
+/* Footer */
+footer a {
+    color: #d2d2d4;
+    font-size: 12px;
+}
+footer a:hover {
+    text-decoration: underline;
+    color: #d2d2d4;
+}
+#blackfooter {
+    background-color: #35362E;
+    padding-top: 30px;
+}
+#blackfooter h5 {
+    color: #d2d2d4;
+    font-size: 12px;
+    font-weight: bold;
+}
+#phumalelalink {
+    text-align: center;
+}
+#phumalelalink img:hover {
+    opacity: 0.8;
+}
+#disclaimerfooter {
+    padding-top: 10px;
+    background-color: #5b5c53;
+    text-align: center;
+    overflow: auto;
+}
+#disclaimerfooter p {
+    font-size: 12px;
+    color: #d2d2d4;
+}
+
+/* Top Tips */
+.toptipstable {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+/* Form Guides */
+.formguide {
+    text-align: center;
+}
+.formguideheader {
+    padding: 5px !important;
+    background-color: #db1d36;
+    color: #ffffff;
+}
+.formguideheader a {
+    word-break: break-word;
+}
+.formguideheader a, .formguideheader a:hover {
+    color: #FFFFFF;
+}
+.formguide .panel a {
+    color: #1A6DAE;
+    font-weight: bold;
+}
+#sidelogos li {
+    margin-bottom: 5px;
+}
+#tipsterpanel {
+    margin-bottom: 15px;
+}
+#tipsterpanel h3, #tipsterpanel p {
+    text-align: center;
+}
+#tipsterpanel p {
+    font-weight: bold;
+}
+
+/* TESTING */
+#testtoptips table tr th, #testtoptips table tr td {
+    padding: 0;
+}
+.righttext {
+    text-align: right !important;
+}
+.centertext {
+    text-align: center !important;
+}
+
+/* By The Day Page */
+.bythedayrow h4, .bythedayrow h3 {
+    text-align: center;
+}
+
+#twitter-widget-0 {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width:0px !important;
+}
+
+.smallpaddingleft {
+    padding-left: 3px;
+    padding-right: 0;
+}
+.smallpaddingright {
+    padding-right: 3px;
+    padding-left:0;
+}
+.fullwidth {
+    width: 100% !important;
+}
+.top10 {
+    margin-top: 10px;
+}
+.panelheader {
+    text-align: center;
+}
+
+/* Key Matches Widget */
+
+.key_match {
+    width: 25%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: center
+}
+
+.match_table {
+    width: 100%;
+    margin: 0
+}
+
+.match_row {
+    cursor: pointer
+}
+
+.team_panel_left {
+    width: 48%;
+    padding: 2px;
+    display: inline-block;
+    text-align: center;
+    background-color: #efefef;
+    border: solid 1px #cccccc;
+    font-size: smaller;
+    margin-right: 2px
+}
+
+.team_panel_right {
+    width: 48%;
+    padding: 2px;
+    display: inline-block;
+    text-align: center;
+    background-color: #efefef;
+    border: solid 1px #cccccc;
+    font-size: smaller
+}
+
+.team_title {
+    padding-top: 5px;
+    height: 3em;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold
+}
+
+.match_date_time {
+    background-color: #db1d36;
+    color: white;
+    display: inline-block;
+    width: 38%;
+    text-align: left;
+    float: left;
+    margin-top: -1px;
+    padding: 4px 3px;
+    font-weight:bold;
+    font-size: 0.75em
+}
+
+.match_pools {
+    background-color: black;
+    display: inline-block;
+    width: 62%;
+    text-align: left;
+    float: left;
+    margin-top: -1px;
+    padding: 0
+}
+
+@media(max-width: 984px) {
+    .team_title {
+        display: none;
+    }
+    .match_date_time {
+        display: none;
+    }
+    .match_pools {
+        display: none;
+    }
+}
+
+.logo_76 {
+    float: none;
+    width:100%;
+    height:100%
+}
+
+.tiny_icon {
+    width:20px; 
+    height:20px
+}
+
+.percent_bar {
+    border: 1px solid white; 
+    text-align: center; 
+    color: white; 
+    float: left; 
+    font-weight: bold; 
+    padding: 0.5625em 0.625em;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes ticker {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+.ticker-wrap {
+    overflow: hidden;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-left: 100%;
+    box-sizing: content-box;
+}
+.ticker-wrap .ticker {
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;
+    white-space: nowrap;
+    padding-right: 100%;
+    box-sizing: content-box;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: ticker;
+    animation-name: ticker;
+    -webkit-animation-duration: 40s;
+    animation-duration: 40s;
+}
+.ticker-wrap .ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.inline-buttons {
+    display: inline-block; 
+    margin-right: 8px; 
+    text-align: center; 
+    vertical-align: middle; 
+    cursor: pointer; 
+    border: 1px solid transparent;
+    color: #db1d36;
+    background-color: #e6e6e6;
+    white-space: nowrap;
+    margin-top: 4px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+    width: 160px;
+    font-size: 11px!important;
+    padding: 10px 16px!important;
+    line-height: 1.33!important;
+    border-radius: 6px!important;
+}
+
+.inline-buttons:hover {
+    color: #ea237c;
+}

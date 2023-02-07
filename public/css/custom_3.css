@@ -1,0 +1,141 @@
+.row.first{margin: 0 0 20px 0;}
+.row.second{margin: 0 0 15px 0; position: relative;}
+.row.third{margin: 0 0 15px 0;}
+.row.fourth{margin: 0 0 15px 0;}
+.row.fifth{margin: 0 0 15px 0;}
+
+.links img {
+    width: 206px;
+    height: auto;
+}
+.links img:hover
+{
+    opacity:0.7;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.links{
+    position: absolute;
+    right: 30px;
+    bottom: -17px;
+    z-index: 999;
+}
+.new-background-links img {
+    width: 180px;
+    padding-top: 5px;
+    height: auto;
+}
+.new-background-links img:hover
+{
+    opacity:0.7;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.new-background-links{
+    position: absolute;
+    right: 30px;
+    bottom: 5px;
+    z-index: 999;
+}
+.new-background-links-left img {
+    width: 180px;
+    padding-top: 5px;
+    height: auto;
+}
+.new-background-links-left img:hover
+{
+    opacity:0.7;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.new-background-links-left{
+    position: absolute;
+    right: 220px;
+    bottom: 5px;
+    z-index: 999;
+}
+
+.menu a{
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #000000 !important;
+    font-size: 10px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    max-height: 45px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.menu li {
+    border-bottom: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+    padding: 3px;
+    /* margin:1px 0 1px 0; */
+}
+.menu li:hover {
+    background-color: #ededed;
+}
+.menu li:first-child {
+    border-top: 1px solid #ededed;
+}
+
+.button {
+    background-color: #db1d36;
+    border: 1px solid #E8BF19;
+}
+.button:hover {
+    background-color: #b90020;
+}
+
+.button4R {
+    background-color: #001489;
+    border: 1px solid #00b74f;
+}
+.button4R:hover {
+    background-color: #001489;
+    color: #00b74f;
+}
+
+.nav {
+    position: relative;
+}
+.menu .sub-nav {
+    display: none;
+}
+.menu li:hover .sub-nav {
+    display: block;
+}
+.sub-nav {
+    padding-top:0;
+    position: absolute;
+    left:145px;
+    margin-top:-30px;
+    z-index:100;
+    background-color: #ffffff;
+    width: 150px;
+}
+.sub-nav li {
+    width: 100%;
+    margin:0;
+}
+
+.has-tip {
+    font-weight: normal !important;
+}
+
+.special-ad-text {
+    padding: 5px !important;
+    background-color: #db1d36;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+    float: left;
+    font-size: 1.1em
+}
+
+a:hover {
+  color: #aaaaaa;
+}
+
+.over_display {
+    display: inline-block !important;
+}
