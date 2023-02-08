@@ -1,5 +1,5 @@
 const azure = require("azure-storage");
-const { queryEntities } = require("../../services/table-services");
+const { queryEntities } = require("../services/table-services");
 
 module.exports = async function (context, req) {
   try {
