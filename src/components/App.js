@@ -140,7 +140,7 @@ class App extends React.Component {
                 <p className="newsdate">
                   {this.state.StoryOfWeek.date} by {this.state.StoryOfWeek.author}
                 </p>
-                <img className="newsimage" src="resources/images/goal.png" alt="News" />
+                <img className="newsimage" src="/images/goal.png" alt="News" />
                 <p className="newsexcerpt">{this.state.StoryOfWeek.strap_line}</p>
                 <a className="button button4R tiny readmorelink" href="/newsitem/StoryOfWeek/{this.state.StoryOfWeek.date}">
                   Read More
@@ -153,7 +153,7 @@ class App extends React.Component {
                 <p className="newsdate">
                   {this.state.Profile.date} by {this.state.Profile.author}
                 </p>
-                <img className="newsimage" src="resources/images/goal.png" alt="News" />
+                <img className="newsimage" src="/images/goal.png" alt="News" />
                 <p className="newsexcerpt">{this.state.Profile.strap_line}</p>
                 <a className="button button4R tiny readmorelink" href="/newsitem/Profile/{this.state.Profile.date}">
                   Read More
@@ -166,7 +166,7 @@ class App extends React.Component {
                 <p className="newsdate">
                   {this.state.Briefs.date} by {this.state.Briefs.author}
                 </p>
-                <img className="newsimage" src="resources/images/goal.png" alt="News" />
+                <img className="newsimage" src="/images/goal.png" alt="News" />
                 <p className="newsexcerpt">{this.state.Briefs.strap_line}</p>
                 <a className="button button4R tiny readmorelink" href="/newsitem/Briefs/{this.state.Briefs.date}">
                   Read More
@@ -179,7 +179,7 @@ class App extends React.Component {
                 <p className="newsdate">
                   {this.state.Tip.date} by {this.state.Tip.author}
                 </p>
-                <img className="newsimage" src="resources/images/goal.png" alt="News" />
+                <img className="newsimage" src="/images/goal.png" alt="News" />
                 <p className="newsexcerpt">{this.state.Tip.strap_line}</p>
                 <a className="button button4R tiny readmorelink" href="/newsitem/Tip/{this.state.Tip.date}">
                   Read More
@@ -192,7 +192,7 @@ class App extends React.Component {
                 <p className="newsdate">
                   {this.state.Column.date} by {this.state.Column.author}
                 </p>
-                <img className="newsimage" src="resources/images/goal.png" alt="News" />
+                <img className="newsimage" src="/images/goal.png" alt="News" />
                 <p className="newsexcerpt">{this.state.Column.strap_line}</p>
                 <a className="button button4R tiny readmorelink" href="/newsitem/Column/{this.state.Column.date}">
                   Read More
