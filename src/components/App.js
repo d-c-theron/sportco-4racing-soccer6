@@ -144,6 +144,58 @@ class App extends React.Component {
                 </a>
               </div>
               <div className="divider"></div>
+              <div className="sectionheader">ACE SOCCER 6 POOL</div>
+              <div className="newsitem">
+                <h3>{this.state.Profile.title}</h3>
+                <p className="newsdate">
+                  {this.state.Profile.date} by {this.state.Profile.author}
+                </p>
+                <img className="newsimage" src="resources/images/goal.png" />
+                <p className="newsexcerpt">{this.state.Profile.strap_line}</p>
+                <a className="button button4R tiny readmorelink" href="/newsitem/Profile/{this.state.Profile.date}">
+                  Read More
+                </a>
+              </div>
+              <div className="divider"></div>
+              <div className="sectionheader">YOU NEED TO KNOW</div>
+              <div className="newsitem">
+                <h3>{this.state.Briefs.title}</h3>
+                <p className="newsdate">
+                  {this.state.Briefs.date} by {this.state.Briefs.author}
+                </p>
+                <img className="newsimage" src="resources/images/goal.png" />
+                <p className="newsexcerpt">{this.state.Briefs.strap_line}</p>
+                <a className="button button4R tiny readmorelink" href="/newsitem/Briefs/{this.state.Briefs.date}">
+                  Read More
+                </a>
+              </div>
+              <div className="divider"></div>
+              <div className="sectionheader">QUOTES OF WEEK</div>
+              <div className="newsitem">
+                <h3>{this.state.Tip.title}</h3>
+                <p className="newsdate">
+                  {this.state.Tip.date} by {this.state.Tip.author}
+                </p>
+                <img className="newsimage" src="resources/images/goal.png" />
+                <p className="newsexcerpt">{this.state.Tip.strap_line}</p>
+                <a className="button button4R tiny readmorelink" href="/newsitem/Tip/{this.state.Tip.date}">
+                  Read More
+                </a>
+              </div>
+              <div className="divider"></div>
+              <div className="sectionheader">GENERAL</div>
+              <div className="newsitem">
+                <h3>{this.state.Column.title}</h3>
+                <p className="newsdate">
+                  {this.state.Column.date} by {this.state.Column.author}
+                </p>
+                <img className="newsimage" src="resources/images/goal.png" />
+                <p className="newsexcerpt">{this.state.Column.strap_line}</p>
+                <a className="button button4R tiny readmorelink" href="/newsitem/Column/{this.state.Column.date}">
+                  Read More
+                </a>
+              </div>
+              <div className="divider"></div>
             </div>
           </div>
         </div>
