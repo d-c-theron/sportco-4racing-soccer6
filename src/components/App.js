@@ -16,7 +16,6 @@ class App extends React.Component {
 
   loadArticles = async () => {
     const articles = (await (await fetch(`/api/GetArticles`)).json()).value;
-    console.log(articles);
     for (const article of articles) {
       if (article.PartitionKey === "PoolOfTheDay") {
         this.setState({
