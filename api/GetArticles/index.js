@@ -3,7 +3,7 @@ const { queryEntities } = require("../services/table-services");
 
 module.exports = async function (context, req) {
   try {
-    var query = new azure.TableQuery().where("PartitionKey eq ?", "PoolOfTheDay");
+    var query = new azure.TableQuery();
     console.log("query", query);
     const result = await queryEntities("articles", query);
     console.log("result", result);
