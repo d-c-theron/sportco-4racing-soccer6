@@ -103,7 +103,7 @@ class App extends React.Component {
                   </li>
                   <li>
                     <a href="https://www.soccer6.co.za/pools-and-matches/soccer13-advanced">
-                      <img src="https://www.soccer6.co.za/staticresources/ownverts/_S13_Carry_1 - 2023-02-05.jpg" 
+                      <img src="https://www.soccer6.co.za/staticresources/ownverts/_S6_Carry_1 - 2023-02-19.jpg" 
                       alt="S13 Carry Over"
                       style={{ height: "100%", width: "100%" }} />
                     </a>
