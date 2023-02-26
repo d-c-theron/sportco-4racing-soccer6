@@ -21,11 +21,14 @@ class App extends React.Component {
 
   loadArticles = async () => {
     const articles = (await (await fetch(`/api/GetArticles`)).json()).value;
+    const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     for (const article of articles) {
+      let d = new Date(article.RowKey);
       if (article.PartitionKey === "PoolOfTheDay") {
         this.setState({
           PoolOfTheDay: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -34,7 +37,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "StoryOfWeek") {
         this.setState({
           StoryOfWeek: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -43,7 +46,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "Profile") {
         this.setState({
           Profile: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -52,7 +55,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "Briefs") {
         this.setState({
           Briefs: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -61,7 +64,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "Briefs") {
         this.setState({
           Briefs: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -70,7 +73,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "Tip") {
         this.setState({
           Tip: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
@@ -79,7 +82,7 @@ class App extends React.Component {
       } else if (article.PartitionKey === "Column") {
         this.setState({
           Column: {
-            date: article.RowKey,
+            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
             title: article.title,
             author: article.author,
             strap_line: article.strap_line,
