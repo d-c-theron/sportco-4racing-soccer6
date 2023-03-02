@@ -2,6 +2,7 @@ import React from "react";
 import Banners from "./Banners";
 import Route from "./Route";
 import Articles from "./Articles";
+import PoolsSummary from "./PoolsSummary"
 
 class App extends React.Component {
   state = {
@@ -106,10 +107,7 @@ class App extends React.Component {
       <div className="large-10 columns">
         <Route path="/">
           <Banners banner_array={this.state.BannerArray} />
-          <div className="large-8 columns pools">
-            <div className="sectionheader">CURRENT POOLS</div>
-            <div>todo</div>
-          </div>
+          <PoolsSummary/>
           <Articles
             pool_of_the_day={this.state.PoolOfTheDay}
             story_of_week={this.state.StoryOfWeek}
