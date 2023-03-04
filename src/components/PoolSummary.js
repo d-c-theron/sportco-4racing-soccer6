@@ -46,7 +46,7 @@ const PoolSummary = ({ pools, panel_selected, panel_number }) => {
     <section className={get_tab_status(panel_number, panel_selected)} style={{paddingTop: '57px'}}>
       <p className="title" data-section-title style={get_tab_style(panel_number)}>
         <a href={"#panel" + panel_number}>
-          <img src={"images/" + get_pool_icon(panel_number)} alt="pool-icon-def"/>
+          <img src={"images/" + get_pool_icon(panel_number)} alt={"pool-icon-" + panel_number}/>
         </a>
       </p>
       <div className="content" data-section-content>
