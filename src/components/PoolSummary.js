@@ -43,13 +43,14 @@ const get_tab_style = (panel_number) => {
 
 const PoolSummary = ({ pools, panel_selected, panel_number }) => {
   return (
-    <section className={get_tab_status(panel_number, panel_selected)} style={{paddingTop: '57px'}}>
+    <section className={get_tab_status(panel_number, panel_selected)} style={{ paddingTop: "57px" }}>
       <p className="title" data-section-title style={get_tab_style(panel_number)}>
         <a href={"#panel" + panel_number}>
-          <img src={"images/" + get_pool_icon(panel_number)} alt={"pool-icon-" + panel_number}/>
+          <img src={"images/" + get_pool_icon(panel_number)} alt={"pool-icon-" + panel_number} />
         </a>
       </p>
       <div className="content" data-section-content>
+        {pools.length === 0 ? <div className="panel">No pool currently open.</div> : ""}
         {pools.map((item) => (
           <PoolItem item={item} />
         ))}

@@ -7,6 +7,13 @@ const getPrettyDate = (programDate) => {
   let d = new Date(programDate);
   return weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()];
 };
+const manage_closing_time_error = (programDate, kickOffTime, PartitionKey, RowKey) => {
+  if (PartitionKey === "ErrorPart" && RowKey === "ErrorRow") {
+    return "Sun 1 Dec 15:30";
+  } else {
+    return getPrettyDate(programDate) + " " + kickOffTime;
+  }
+};
 
 const PoolItem = ({ item }) => {
   return (
@@ -27,6 +34,23 @@ const PoolItem = ({ item }) => {
           ))}
         </tbody>
       </table>
+      <div class="panel poolinformation">
+        Betting Opens: {getPrettyDate(item.poolOpenDate)}
+        <br />
+        Closes: {manage_closing_time_error(item.programDate, item.kickOffTime)}
+        <br />
+        Current Pool: {item.poolTotal}
+        <br />
+        Status: {item.poolStatus}. Pool Code {item.programCode}
+        <br />
+        {item.poolStatus === "OPEN" ? (
+          <a href={"https://www.tab4racing.com/tabs/soccer?event=soccer&code=" + item.programCode} className="button button4R tiny right betnowbutton" target="_blank">
+            BET NOW
+          </a>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

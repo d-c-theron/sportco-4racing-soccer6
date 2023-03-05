@@ -113,6 +113,7 @@ class App extends React.Component {
   loadSummaryPools = async () => {
     console.log("summary pools on the way!");
     const summary_pools = (await (await fetch(`/api/GetSummaryPools`)).json()).value;
+    // sort pools by
     const temps6 = [];
     const temps10 = [];
     const temps13 = [];
@@ -134,6 +135,12 @@ class App extends React.Component {
         tempsM.push(summary_pool);
       }
     }
+    temps6.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    temps10.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    temps13.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    temps4.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    temps13X.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    tempsM.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
     this.setState({ S6Pools: temps6, S10Pools: temps10, S13Pools: temps13, S4Pools: temps4, S13XPools: temps13X, SMPools: tempsM });
   };
 
