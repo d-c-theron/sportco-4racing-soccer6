@@ -44,7 +44,12 @@ const PoolItem = ({ item }) => {
         Status: {item.poolStatus}. Pool Code {item.programCode}
         <br />
         {item.poolStatus === "OPEN" ? (
-          <a href={"https://www.tab4racing.com/tabs/soccer?event=soccer&code=" + item.programCode} className="button button4R tiny right betnowbutton" target="_blank">
+          <a
+            href={"https://www.tab4racing.com/tabs/soccer?event=soccer&code=" + item.programCode}
+            className="button button4R tiny right betnowbutton"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             BET NOW
           </a>
         ) : (
