@@ -167,6 +167,10 @@ class App extends React.Component {
             column={this.state.Column}
           />
         </Route>
+        <Route path="/pools-and-matches/soccer-4">
+          <Banners banner_array={this.state.BannerArray} />
+          <PoolsFull id="4" />
+        </Route>
       </div>
     );
   }
