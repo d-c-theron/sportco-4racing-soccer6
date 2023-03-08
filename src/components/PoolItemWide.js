@@ -1,5 +1,5 @@
 import React from "react";
-import MatchSummary from "./MatchSummary";
+import MatchSummaryWide from "./MatchSummaryWide";
 
 const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -15,7 +15,7 @@ const manage_closing_time_error = (programDate, kickOffTime, PartitionKey, RowKe
   }
 };
 
-const PoolItem = ({ item }) => {
+const PoolItemWide = ({ item }) => {
   return (
     <div>
       <div className="pooldateindicator4R">
@@ -26,11 +26,11 @@ const PoolItem = ({ item }) => {
           <tr>
             <th>Match</th>
             <th>Team A</th>
-            <td style={{ textAlign: "center" }}>v</td>
+            <th className="centertext">v</th>
             <th className="righttext">Team B</th>
           </tr>
           {JSON.parse(item.matches).map((match) => (
-            <MatchSummary item={match} />
+            <MatchSummaryWide item={match} />
           ))}
         </tbody>
       </table>
@@ -60,4 +60,4 @@ const PoolItem = ({ item }) => {
   );
 };
 
-export default PoolItem;
+export default PoolItemWide;
