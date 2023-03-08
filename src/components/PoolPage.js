@@ -41,6 +41,10 @@ const PoolPage = ({ pool_id }) => {
         end_term = "Megastrikf ";
         page_name = "Pools and Matches - MegaStrike 10";
         break;
+      default:
+        start_term = "Error ";
+        end_term = "Error ";
+        page_name = "Error ";
     }
     const pools = (await (await fetch(`/api/GetFullPools/${start_term}/${end_term}`)).json()).value;
     const temp = [];

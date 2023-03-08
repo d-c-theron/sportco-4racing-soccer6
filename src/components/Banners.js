@@ -29,7 +29,7 @@ const Banners = () => {
         <div id="carryover-slider">
           <ul className="bjqs">
             {BannerArray.map((item) => (
-              <Banner key={item.name} item={item} />
+              <Banner key={item.name} item={item} banner_volume={BannerVolume} />
             ))}
           </ul>
         </div>
