@@ -5,13 +5,13 @@ const PoolPage = ({ pool_id }) => {
   const [Pools, setPools] = useState([]);
   const [PageName, setPageName] = useState("");
   const [PoolVolume, setPoolVolume] = useState(-1);
-  let start_term = "";
-  let end_term = "";
-  let page_name = "";
 
   useEffect(() => {
     (async () => {
       const loadPools = async () => {
+        let start_term = "";
+        let end_term = "";
+        let page_name = "";
         switch (pool_id) {
           case 6:
             start_term = "S6 ";

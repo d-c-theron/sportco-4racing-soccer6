@@ -15,7 +15,7 @@ const manage_closing_time_error = (programDate, kickOffTime, PartitionKey, RowKe
   }
 };
 
-const PoolItem = ({ item }) => {
+const PoolItem = ({ item, panel_number }) => {
   return (
     <div>
       <div className="pooldateindicator4R">
@@ -30,7 +30,7 @@ const PoolItem = ({ item }) => {
             <th className="righttext">Team B</th>
           </tr>
           {JSON.parse(item.matches).map((match) => (
-            <MatchSummary item={match} />
+            <MatchSummary item={match} pool_title={item.PartitionKey}/>
           ))}
         </tbody>
       </table>

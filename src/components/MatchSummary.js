@@ -20,7 +20,7 @@ const manage_date_format = (kickoff_string) => {
   }
 };
 
-const MatchSummary = ({ item }) => {
+const MatchSummary = ({ item, pool_title }) => {
   return (
     <tr>
       <td className="bold">{"M" + item.mnum}</td>
