@@ -80,7 +80,7 @@ const App = () => {
         temps4.push(summary_pool);
       } else if (summary_pool.PartitionKey.startsWith("S13X ")) {
         temps13X.push(summary_pool);
-      } else if (summary_pool.PartitionKey.startsWith("Megastrike ")) {
+      } else if (summary_pool.PartitionKey.startsWith("Megastrike")) {
         tempsM.push(summary_pool);
       }
     }
