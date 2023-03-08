@@ -1,119 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banners from "./Banners";
-import Route from "./Route";
-import Articles from "./Articles";
-import PoolsSummary from "./PoolsSummary";
+import ArticlesElement from "./ArticlesElement";
+import PoolsWidget from "./PoolsWidget";
 
-class App extends React.Component {
-  state = {
-    PoolOfTheDay: { date: "", title: "", author: "", strap_line: "" },
-    StoryOfWeek: { date: "", title: "", author: "", strap_line: "" },
-    Profile: { date: "", title: "", author: "", strap_line: "" },
-    Briefs: { date: "", title: "", author: "", strap_line: "" },
-    Tip: { date: "", title: "", author: "", strap_line: "" },
-    Column: { date: "", title: "", author: "", strap_line: "" },
-    BannerArray: [],
-    S6Pools: [],
-    S10Pools: [],
-    S13Pools: [],
-    S4Pools: [],
-    S13XPools: [],
-    SMPools: [],
-    panel_selected: 1,
+const App = () => {
+  const [PoolOfTheDay, setPoolOfTheDay] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [StoryOfWeek, setStoryOfWeek] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [Profile, setProfile] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [Briefs, setBriefs] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [Tip, setTip] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [Column, setColumn] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [BannerArray, setBannerArray] = useState([]);
+  const [BannerVolume, setBannerVolume] = useState(-1);
+  const [S6Pools, setS6Pools] = useState([]);
+  const [S10Pools, setS10Pools] = useState([]);
+  const [S13Pools, setS13Pools] = useState([]);
+  const [S4Pools, setS4Pools] = useState([]);
+  const [S13XPools, setS13XPools] = useState([]);
+  const [SMPools, setSMPools] = useState([]);
+  const [PanelSelected, setPanelSelected] = useState(1);
+  const [PoolVolumes, setPoolVolumes] = useState([-1, -1, -1, -1, -1, -1]);
+
+  const loadBanners = async () => {
+    const banners = (await (await fetch(`/api/GetBanners`)).json()).value;
+    let temp = [];
+    let count = 0;
+    for (const banner of banners) {
+      count++;
+      temp.push(banner);
+    }
+    setBannerVolume(count);
+    setBannerArray(temp);
   };
 
-  componentDidMount() {
-    this.loadBanners();
-    this.loadArticles();
-    this.loadSummaryPools();
-  }
-
-  loadArticles = async () => {
-    const articles = (await (await fetch(`/api/GetArticles`)).json()).value;
+  const loadArticles = async () => {
+    const json_articles = (await (await fetch(`/api/GetArticles`)).json()).value;
     const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    for (const article of articles) {
+    for (const article of json_articles) {
       let d = new Date(article.RowKey);
+      let updated_article = {
+        date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
+        title: article.title,
+        author: article.author,
+        strap_line: article.strap_line,
+      };
       if (article.PartitionKey === "PoolOfTheDay") {
-        this.setState({
-          PoolOfTheDay: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setPoolOfTheDay(updated_article);
       } else if (article.PartitionKey === "StoryOfWeek") {
-        this.setState({
-          StoryOfWeek: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setStoryOfWeek(updated_article);
       } else if (article.PartitionKey === "Profile") {
-        this.setState({
-          Profile: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setProfile(updated_article);
       } else if (article.PartitionKey === "Briefs") {
-        this.setState({
-          Briefs: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
-      } else if (article.PartitionKey === "Briefs") {
-        this.setState({
-          Briefs: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setBriefs(updated_article);
       } else if (article.PartitionKey === "Tip") {
-        this.setState({
-          Tip: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setTip(updated_article);
       } else if (article.PartitionKey === "Column") {
-        this.setState({
-          Column: {
-            date: weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()],
-            title: article.title,
-            author: article.author,
-            strap_line: article.strap_line,
-          },
-        });
+        setColumn(updated_article);
       }
     }
   };
 
-  loadBanners = async () => {
-    const banners = (await (await fetch(`/api/GetBanners`)).json()).value;
-    const temp = [];
-    for (const banner of banners) {
-      temp.push(banner);
-    }
-    this.setState({ BannerArray: temp });
-  };
-
-  loadSummaryPools = async () => {
-    console.log("summary pools on the way!");
+  const loadSummaryPools = async () => {
     const summary_pools = (await (await fetch(`/api/GetSummaryPools`)).json()).value;
-    // sort pools by
     const temps6 = [];
     const temps10 = [];
     const temps13 = [];
@@ -136,44 +85,45 @@ class App extends React.Component {
       }
     }
     temps6.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    setS6Pools(temps6);
     temps10.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    setS10Pools(temps10);
     temps13.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    setS13Pools(temps13);
     temps4.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    setS4Pools(temps4);
     temps13X.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
+    setS13XPools(temps13X);
     tempsM.sort((a, b) => (a.RowKey > b.RowKey ? 1 : -1));
-    this.setState({ S6Pools: temps6, S10Pools: temps10, S13Pools: temps13, S4Pools: temps4, S13XPools: temps13X, SMPools: tempsM });
+    setSMPools(tempsM);
+    const temp_volumes = [temps6.length, temps10.length, temps13.length, temps4.length, temps13X.length, tempsM.length];
+    setPoolVolumes(temp_volumes);
   };
 
-  render() {
-    return (
-      <div className="large-10 columns">
-        <Route path="/">
-          <Banners banner_array={this.state.BannerArray} />
-          <PoolsSummary
-            s6pools={this.state.S6Pools}
-            s10pools={this.state.S10Pools}
-            s13pools={this.state.S13Pools}
-            s4pools={this.state.S4Pools}
-            s13Xpools={this.state.S13XPools}
-            sMpools={this.state.SMPools}
-            panel_selected={this.state.panel_selected}
-          />
-          <Articles
-            pool_of_the_day={this.state.PoolOfTheDay}
-            story_of_week={this.state.StoryOfWeek}
-            profile={this.state.Profile}
-            briefs={this.state.Briefs}
-            tip={this.state.Tip}
-            column={this.state.Column}
-          />
-        </Route>
-        <Route path="/pools-and-matches/soccer-4">
-          <Banners banner_array={this.state.BannerArray} />
-          <PoolsFull id="4" />
-        </Route>
-      </div>
-    );
-  }
-}
+  useEffect(() => {
+    (async () => {
+      loadBanners();
+      loadArticles();
+      loadSummaryPools();
+    })();
+  }, []);
+
+  return (
+    <div className="large-10 columns">
+      <Banners banner_array={BannerArray} banner_volume={BannerVolume} />
+      <PoolsWidget
+        s6_pools={S6Pools}
+        s10_pools={S10Pools}
+        s13_pools={S13Pools}
+        s4_pools={S4Pools}
+        s13X_pools={S13XPools}
+        sM_pools={SMPools}
+        panel_selected={PanelSelected}
+        pool_volumes={PoolVolumes}
+      />
+      <ArticlesElement pool_of_the_day={PoolOfTheDay} story_of_week={StoryOfWeek} profile={Profile} briefs={Briefs} tip={Tip} column={Column} />
+    </div>
+  );
+};
 
 export default App;
