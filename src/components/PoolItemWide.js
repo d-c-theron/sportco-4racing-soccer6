@@ -30,7 +30,7 @@ const PoolItemWide = ({ item }) => {
             <th className="righttext">Team B</th>
           </tr>
           {JSON.parse(item.matches).map((match) => (
-            <MatchSummaryWide item={match} />
+            <MatchSummaryWide item={match} pool_title={item.PartitionKey}/>
           ))}
         </tbody>
       </table>

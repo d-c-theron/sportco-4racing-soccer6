@@ -15,7 +15,7 @@ const manage_closing_time_error = (programDate, kickOffTime, PartitionKey, RowKe
   }
 };
 
-const PoolItem = ({ item, panel_number }) => {
+const PoolItem = ({ item }) => {
   return (
     <div>
       <div className="pooldateindicator4R">

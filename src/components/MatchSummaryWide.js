@@ -25,16 +25,20 @@ const manage_date_format = (kickoff_string) => {
   }
 };
 
-const MatchSummaryWide = ({ item }) => {
+const MatchSummaryWide = ({ item, pool_title }) => {
   return (
     <tr>
       <td className="bold">{"M" + item.mnum}</td>
       <td>
         <span className="bold">{item.teamA}</span>
         <br />
-        &nbsp;<span className={pick_result_colour(item.a1)}> {item.a1} </span>&nbsp;
-        <span className={pick_result_colour(item.a2)}> {item.a2} </span>&nbsp;
-        <span className={pick_result_colour(item.a3)}> {item.a3} </span>&nbsp;
+        {pool_title.startsWith("Megastrike") ? null : (
+          <div>
+            <span className={pick_result_colour(item.a1)}> {item.a1} </span>&nbsp;
+            <span className={pick_result_colour(item.a2)}> {item.a2} </span>&nbsp;
+            <span className={pick_result_colour(item.a3)}> {item.a3} </span>&nbsp;
+          </div>
+        )}
       </td>
       <td>
         <center>
@@ -47,9 +51,13 @@ const MatchSummaryWide = ({ item }) => {
       </td>
       <td className="bold righttext">
         {item.teamB} <br />
-        &nbsp;<span className={pick_result_colour(item.b1)}> {item.b1} </span>&nbsp;
-        <span className={pick_result_colour(item.b2)}> {item.b2} </span>&nbsp;
-        <span className={pick_result_colour(item.b3)}> {item.b3} </span>&nbsp;
+        {pool_title.startsWith("Megastrike") ? null : (
+          <div>
+            <span className={pick_result_colour(item.b1)}> {item.b1} </span>&nbsp;
+            <span className={pick_result_colour(item.b2)}> {item.b2} </span>&nbsp;
+            <span className={pick_result_colour(item.b3)}> {item.b3} </span>&nbsp;
+          </div>
+        )}
       </td>
     </tr>
   );

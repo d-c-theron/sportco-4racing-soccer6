@@ -27,25 +27,33 @@ const MatchSummary = ({ item, pool_title }) => {
       <td>{item.teamA}</td>
       <td style={{ textAlign: "center", whiteSpace: "nowrap" }}>
         <a style={{ color: "#001489" }} href={"/h2h/" + item.id}>
-          <span className="hide-for-small" style={pick_result_colour(item.a1)}>
-            ⬤
-          </span>
-          <span className="hide-for-small" style={pick_result_colour(item.a2)}>
-            ⬤
-          </span>
-          <span className="hide-for-small" style={pick_result_colour(item.a3)}>
-            ⬤
-          </span>
+          {pool_title.startsWith("Megastrike")
+            ? null
+            : [
+                <span className="hide-for-small" style={pick_result_colour(item.a1)}>
+                  ⬤
+                </span>,
+                <span className="hide-for-small" style={pick_result_colour(item.a2)}>
+                  ⬤
+                </span>,
+                <span className="hide-for-small" style={pick_result_colour(item.a3)}>
+                  ⬤
+                </span>,
+              ]}
           {manage_date_format(item.ko)}
-          <span className="hide-for-small" style={pick_result_colour(item.b1)}>
-            ⬤
-          </span>
-          <span className="hide-for-small" style={pick_result_colour(item.b2)}>
-            ⬤
-          </span>
-          <span className="hide-for-small" style={pick_result_colour(item.b3)}>
-            ⬤
-          </span>
+          {pool_title.startsWith("Megastrike")
+            ? null
+            : [
+                <span className="hide-for-small" style={pick_result_colour(item.b1)}>
+                  ⬤
+                </span>,
+                <span className="hide-for-small" style={pick_result_colour(item.b2)}>
+                  ⬤
+                </span>,
+                <span className="hide-for-small" style={pick_result_colour(item.b3)}>
+                  ⬤
+                </span>,
+              ]}
         </a>
       </td>
       <td className="righttext">{item.teamB}</td>
