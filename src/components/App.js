@@ -98,6 +98,7 @@ const App = () => {
     setSMPools(tempsM);
     const temp_volumes = [temps6.length, temps10.length, temps13.length, temps4.length, temps13X.length, tempsM.length];
     setPoolVolumes(temp_volumes);
+    setPanelSelected(1);
   };
 
   useEffect(() => {

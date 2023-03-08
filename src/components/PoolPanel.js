@@ -50,7 +50,7 @@ const PoolPanel = ({ pools, panel_selected, panel_number, volume }) => {
         </a>
       </p>
       <div className="content" data-section-content>
-        {pools.length === 0 ? <div className="panel">No pool currently open.</div> : ""}
+        {volume===-1 ? <div className="panel">Loading...</div>: volume === 0 ? <div className="panel">No pool currently open.</div> : ""}
         {pools.map((item) => (
           <PoolItem item={item} />
         ))}
