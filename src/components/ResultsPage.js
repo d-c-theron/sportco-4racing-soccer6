@@ -5,9 +5,11 @@ import S13Result from "./S13Result";
 import S4Result from "./S4Result";
 import S13XResult from "./S13XResult";
 import MegastrikeResult from "./MegastrikeResult";
+import PendingResult from "./PendingResult";
 
 const ResultsPage = ({ pool_id }) => {
   const [Results, setResults] = useState([]);
+  const [PendingResults, setPendingResults] = useState([]);
   const [PageName, setPageName] = useState("");
 
   const renderResultType = (item) => {
@@ -24,6 +26,49 @@ const ResultsPage = ({ pool_id }) => {
         return <S13XResult item={item} />;
       case 12:
         return <MegastrikeResult item={item} />;
+      default:
+        return null;
+    }
+  };
+
+  const renderPendingResultType = (item) => {
+    switch (pool_id) {
+      case 6:
+        if (item.league_title.startsWith("S6 ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
+      case 10:
+        if (item.league_title.startsWith("S10 ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
+      case 13:
+        if (item.league_title.startsWith("S13 ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
+      case 4:
+        if (item.league_title.startsWith("S4 ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
+      case 16:
+        if (item.league_title.startsWith("S13X ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
+      case 12:
+        if (item.league_title.startsWith("Megastrike ")) {
+          return <PendingResult item={item} />;
+        } else {
+          return null;
+        }
       default:
         return null;
     }
@@ -64,6 +109,17 @@ const ResultsPage = ({ pool_id }) => {
         setResults(temp);
         setPageName(page_name);
       };
+
+      const loadPendingResults = async () => {
+        const pending_results = (await (await fetch(`/api/GetPendingResults`)).json()).value;
+        const temp = [];
+        for (const pending_result of pending_results) {
+          temp.push(pending_result);
+        }
+        setPendingResults(temp);
+      };
+
+      loadPendingResults();
       loadResults();
     })();
   }, [pool_id]);
@@ -72,6 +128,7 @@ const ResultsPage = ({ pool_id }) => {
     <div class="row second">
       <div class="large-12 columns">
         <h1>{PageName}</h1>
+        {PendingResults.map((item) => renderPendingResultType(item))}
         {Results.map((item) => renderResultType(item))}
       </div>
     </div>
