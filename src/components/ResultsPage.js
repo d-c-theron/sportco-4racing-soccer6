@@ -125,8 +125,8 @@ const ResultsPage = ({ pool_id }) => {
   }, [pool_id]);
 
   return (
-    <div class="row second">
-      <div class="large-12 columns">
+    <div className="row second">
+      <div className="large-12 columns">
         <h1>{PageName}</h1>
         {PendingResults.map((item) => renderPendingResultType(item))}
         {Results.map((item) => renderResultType(item))}

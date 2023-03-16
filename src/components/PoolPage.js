@@ -63,10 +63,10 @@ const PoolPage = ({ pool_id }) => {
   }, [pool_id]);
 
   return (
-    <div class="row second">
-      <div class="large-12 columns">
+    <div className="row second">
+      <div className="large-12 columns">
         <h1>{PageName}</h1>
-        {PoolVolume === -1 ? <div class="panel">Loading...</div> : PoolVolume === 0 ? <div className="panel">No pool currently open.</div> : ""}
+        {PoolVolume === -1 ? <div className="panel">Loading...</div> : PoolVolume === 0 ? <div classNameName="panel">No pool currently open.</div> : ""}
         {Pools.map((item) => (
           <PoolItemWide item={item} />
         ))}

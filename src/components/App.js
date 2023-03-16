@@ -82,6 +82,26 @@ const App = () => {
         <Banners />
         <ResultsPage pool_id={12} />
       </Route>
+      <Route path="/top-tips/soccer-6">
+        <Banners />
+        <TipsPage pool_id={6} />
+      </Route>
+      <Route path="/top-tips/soccer-10">
+        <Banners />
+        <TipsPage pool_id={10} />
+      </Route>
+      <Route path="/top-tips/soccer-13">
+        <Banners />
+        <TipsPage pool_id={13} />
+      </Route>
+      <Route path="/top-tips/soccer-4">
+        <Banners />
+        <TipsPage pool_id={4} />
+      </Route>
+      <Route path="/top-tips/soccer-13-extra">
+        <Banners />
+        <TipsPage pool_id={16} />
+      </Route>
     </div>
   );
 };
