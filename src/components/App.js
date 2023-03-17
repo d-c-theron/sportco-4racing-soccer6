@@ -4,6 +4,7 @@ import ArticlesElement from "./ArticlesElement";
 import PoolsWidget from "./PoolsWidget";
 import PoolPage from "./PoolPage";
 import ResultsPage from "./ResultsPage";
+import TipsPage from "./TipsPage";
 import Route from "./Route";
 
 const App = () => {

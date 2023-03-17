@@ -66,8 +66,17 @@ const TipsPage = ({ pool_id }) => {
   return (
     <div className="row second">
       <div className="large-12 columns">
-        <h1>{PageName}</h1>
-        {PoolVolume === -1 ? <div className="panel">Loading...</div> : PoolVolume === 0 ? <div classNameName="panel">No tips currently available for this pool.</div> : ""}
+        <h1>
+          {PageName}
+          <img src="/images/Mark Gleeson.jpg" alt="Mark Gleeson" width="50" height="76" style={{ float: "right", padding: "2px" }} />
+        </h1>
+        {TipsVolume === -1 ? (
+          <div className="panel">Loading...</div>
+        ) : TipsVolume === 0 ? (
+          <div classNameName="panel">No tips currently available for this pool.</div>
+        ) : (
+          ""
+        )}
         {Tips.map((item) => renderTipsType(item))}
       </div>
     </div>
