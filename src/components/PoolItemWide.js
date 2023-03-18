@@ -7,21 +7,6 @@ const getPrettyDate = (programDate) => {
   let d = new Date(programDate);
   return weekday[d.getDay()] + " " + d.getDate() + " " + monthName[d.getMonth()];
 };
-const getTipsPage = (league_title) => {
-  if (league_title.startsWith("S6 ")) {
-    return "soccer-6";
-  } else if (league_title.startsWith("S10 ")) {
-    return "soccer-10";
-  } else if (league_title.startsWith("S13 ")) {
-    return "soccer-13";
-  } else if (league_title.startsWith("S4 ")) {
-    return "soccer-4";
-  } else if (league_title.startsWith("S13X ")) {
-    return "soccer-13-extra";
-  } else {
-    return "#";
-  }
-};
 const manage_closing_time_error = (programDate, kickOffTime, PartitionKey, RowKey) => {
   if (PartitionKey === "ErrorPart" && RowKey === "ErrorRow") {
     return "Sun 1 Dec 15:30";

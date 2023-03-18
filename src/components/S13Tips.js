@@ -46,11 +46,12 @@ const calculate_cost = (
 const S13Tips = ({ item }) => {
   return (
     <div>
-      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}></a>
-      <div className="pooldateindicator4R">
-        {getPrettyDate(item.RowKey)} - {item.league_title}
-        <span style={{ float: "right" }}>Mark Gleeson</span>
-      </div>
+      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}>
+        <div className="pooldateindicator4R">
+          {getPrettyDate(item.RowKey)} - {item.league_title}
+          <span style={{ float: "right" }}>Mark Gleeson</span>
+        </div>
+      </a>
       <table className="toptipstable">
         <tr>
           <td className="bold">M1</td>
