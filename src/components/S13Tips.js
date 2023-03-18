@@ -46,6 +46,7 @@ const calculate_cost = (
 const S13Tips = ({ item }) => {
   return (
     <div>
+      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}></a>
       <div className="pooldateindicator4R">
         {getPrettyDate(item.RowKey)} - {item.league_title}
         <span style={{ float: "right" }}>Mark Gleeson</span>
@@ -169,7 +170,13 @@ const S13Tips = ({ item }) => {
                 .00
               </strong>
             </span>
-            <a target="_blank" rel="noopener noreferrer" style={{ float: "right", margin: 0 }} className="button button4R tiny betnowbutton" href={item.link}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ float: "right", margin: 0 }}
+              className="button button4R tiny betnowbutton"
+              href={`https://tab4racing.com/?tip=${item.link}&channel=9`}
+            >
               BET NOW
             </a>
           </td>

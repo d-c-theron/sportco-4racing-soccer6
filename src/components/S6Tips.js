@@ -25,6 +25,7 @@ const calculate_cost = (selection1, selection2, selection3, selection4, selectio
 const S6Tips = ({ item }) => {
   return (
     <div>
+      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}></a>
       <div className="pooldateindicator4R">
         {getPrettyDate(item.RowKey)} - {item.league_title}
         <span style={{ float: "right" }}>Mark Gleeson</span>
@@ -80,7 +81,13 @@ const S6Tips = ({ item }) => {
               {item.selection6}{" "}
               <strong>Cost: R{calculate_cost(item.selection1, item.selection2, item.selection3, item.selection4, item.selection5, item.selection6)}.00</strong>
             </span>
-            <a target="_blank" rel="noopener noreferrer" style={{ float: "right", margin: 0 }} className="button button4R tiny betnowbutton" href={item.link}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ float: "right", margin: 0 }}
+              className="button button4R tiny betnowbutton"
+              href={`https://tab4racing.com/?tip=${item.link}&channel=9`}
+            >
               BET NOW
             </a>
           </td>

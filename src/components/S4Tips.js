@@ -17,6 +17,7 @@ const calculate_cost = (selection1, selection2, selection3, selection4) => {
 const S4Tips = ({ item }) => {
   return (
     <div>
+      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}></a>
       <div className="pooldateindicator4R">
         {getPrettyDate(item.RowKey)} - {item.league_title}
         <span style={{ float: "right" }}>Mark Gleeson</span>
@@ -57,7 +58,13 @@ const S4Tips = ({ item }) => {
               <strong>Suggested Perm:</strong> {item.selection1} x {item.selection2} x {item.selection3} x {item.selection4}{" "}
               <strong>Cost: R{calculate_cost(item.selection1, item.selection2, item.selection3, item.selection4)}.00</strong>
             </span>
-            <a target="_blank" rel="noopener noreferrer" style={{ float: "right", margin: 0 }} className="button button4R tiny betnowbutton" href={item.link}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ float: "right", margin: 0 }}
+              className="button button4R tiny betnowbutton"
+              href={`https://tab4racing.com/?tip=${item.link}&channel=9`}
+            >
               BET NOW
             </a>
           </td>
