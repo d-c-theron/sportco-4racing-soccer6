@@ -180,7 +180,7 @@ const show_perm = (
 const S13XTips = ({ item }) => {
   return (
     <div>
-      <a href="javascript:;" name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}>
+      <a href="#" name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}>
         <div className="pooldateindicator4R">
           {getPrettyDate(item.RowKey)} - {item.league_title}
           <span style={{ float: "right" }}>Mark Gleeson</span>
