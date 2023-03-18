@@ -17,7 +17,7 @@ const calculate_cost = (selection1, selection2, selection3, selection4) => {
 const S4Tips = ({ item }) => {
   return (
     <div>
-      <a name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}>
+      <a href="javascript:;" name={item.RowKey + item.program_code + item.league_title.replace(/ /g, "")}>
         <div className="pooldateindicator4R">
           {getPrettyDate(item.RowKey)} - {item.league_title}
           <span style={{ float: "right" }}>Mark Gleeson</span>
