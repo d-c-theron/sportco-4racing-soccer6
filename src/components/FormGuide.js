@@ -11,7 +11,7 @@ const FormGuide = ({ item }) => {
         </div>
         <div class="panel">
           <a target="_blank" rel="noopener noreferrer" href={item.url}>
-            <img src="/images/pdf.png" />
+            <img src="/images/pdf.png" alt="PDF" />
           </a>
           <p>
             <a target="_blank" rel="noopener noreferrer" href={item.url}>

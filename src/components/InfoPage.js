@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import InfoAboutUs from "./InfoAboutUs";
 import InfoContactUs from "./InfoContactUs";
 import InfoRules from "./InfoRules";

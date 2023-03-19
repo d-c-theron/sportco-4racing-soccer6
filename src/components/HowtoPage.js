@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import S6Howto from "./S6Howto";
 import S10Howto from "./S10Howto";
 import S13Howto from "./S13Howto";

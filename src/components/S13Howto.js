@@ -6,7 +6,7 @@ const S13Howto = () => {
       <div class="row">
         <div class="large-6 columns">
           <div class="flex-video">
-            <iframe width="420" height="315" src="https://www.youtube.com/embed/XXFy03Y6rJc?rel=0" frameborder="0" allowfullscreen=""></iframe>
+            <iframe title="Video" width="420" height="315" src="https://www.youtube.com/embed/XXFy03Y6rJc?rel=0" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
 
