@@ -5,6 +5,10 @@ import PoolsWidget from "./PoolsWidget";
 import PoolPage from "./PoolPage";
 import ResultsPage from "./ResultsPage";
 import TipsPage from "./TipsPage";
+import ArticlePage from "./ArticlePage";
+import FormGuidePage from "./FormGuidePage";
+import HowtoPage from "./HowtoPage";
+import InfoPage from "./InfoPage";
 import Route from "./Route";
 
 const App = () => {
@@ -102,6 +106,70 @@ const App = () => {
       <Route path="/top-tips/soccer-13-extra">
         <Banners />
         <TipsPage pool_id={16} />
+      </Route>
+      <Route path="/newsitem/PoolOfTheDay">
+        <Banners />
+        <ArticlePage article={"PoolOfTheDay"} />
+      </Route>
+      <Route path="/newsitem/StoryOfWeek">
+        <Banners />
+        <ArticlePage article={"StoryOfWeek"} />
+      </Route>
+      <Route path="/newsitem/Profile">
+        <Banners />
+        <ArticlePage article={"Profile"} />
+      </Route>
+      <Route path="/newsitem/Briefs">
+        <Banners />
+        <ArticlePage article={"Briefs"} />
+      </Route>
+      <Route path="/newsitem/Tip">
+        <Banners />
+        <ArticlePage article={"Tip"} />
+      </Route>
+      <Route path="/newsitem/Column">
+        <Banners />
+        <ArticlePage article={"Column"} />
+      </Route>
+      <Route path="/form-guides/head-2-head">
+        <Banners />
+        <FormGuidePage />
+      </Route>
+      <Route path="/how-to-play/soccer-4">
+        <Banners />
+        <HowtoPage pool_id={4} />
+      </Route>
+      <Route path="/how-to-play/soccer-6">
+        <Banners />
+        <HowtoPage pool_id={6} />
+      </Route>
+      <Route path="/how-to-play/soccer-10">
+        <Banners />
+        <HowtoPage pool_id={10} />
+      </Route>
+      <Route path="/how-to-play/soccer-13">
+        <Banners />
+        <HowtoPage pool_id={13} />
+      </Route>
+      <Route path="/how-to-play/soccer-13x">
+        <Banners />
+        <HowtoPage pool_id={16} />
+      </Route>
+      <Route path="/how-to-play/megastrike">
+        <Banners />
+        <HowtoPage pool_id={12} />
+      </Route>
+      <Route path="/about-us">
+        <Banners />
+        <InfoPage page={"about-us"}/>
+      </Route>
+      <Route path="/contact-us">
+        <Banners />
+        <InfoPage page={"contact-us"}/>
+      </Route>
+      <Route path="/rules">
+        <Banners />
+        <InfoPage page={"rules"}/>
       </Route>
     </div>
   );

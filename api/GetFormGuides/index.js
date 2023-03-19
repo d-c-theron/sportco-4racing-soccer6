@@ -3,8 +3,8 @@ const { queryEntities } = require("../services/table-services");
 
 module.exports = async function (context, req) {
   try {
-    var query = new azure.TableQuery().select("PartitionKey", "RowKey", "title", "author", "strap_line");
-    const result = await queryEntities("articles", query);
+    var query = new azure.TableQuery().where("RowKey eq ?", "form-guide");;
+    const result = await queryEntities("blobs", query);
     context.res = {
       body: result,
     };

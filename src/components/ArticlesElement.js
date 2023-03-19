@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const ArticlesElement = () => {
-  const [PoolOfTheDay, setPoolOfTheDay] = useState({ date: "", title: "", author: "", strap_line: "" });
-  const [StoryOfWeek, setStoryOfWeek] = useState({ date: "", title: "", author: "", strap_line: "" });
-  const [Profile, setProfile] = useState({ date: "", title: "", author: "", strap_line: "" });
-  const [Briefs, setBriefs] = useState({ date: "", title: "", author: "", strap_line: "" });
-  const [Tip, setTip] = useState({ date: "", title: "", author: "", strap_line: "" });
-  const [Column, setColumn] = useState({ date: "", title: "", author: "", strap_line: "" });
+  const [PoolOfTheDay, setPoolOfTheDay] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
+  const [StoryOfWeek, setStoryOfWeek] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
+  const [Profile, setProfile] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
+  const [Briefs, setBriefs] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
+  const [Tip, setTip] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
+  const [Column, setColumn] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
 
   const loadArticles = async () => {
     const json_articles = (await (await fetch(`/api/GetArticles`)).json()).value;
@@ -19,6 +19,7 @@ const ArticlesElement = () => {
         title: article.title,
         author: article.author,
         strap_line: article.strap_line,
+        raw_date: article.RowKey,
       };
       if (article.PartitionKey === "PoolOfTheDay") {
         setPoolOfTheDay(updated_article);
@@ -54,7 +55,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{PoolOfTheDay.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/PoolOfTheDay/{PoolOfTheDay.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/PoolOfTheDay">
               Read More
             </a>
           </div>
@@ -67,7 +68,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{StoryOfWeek.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/StoryOfWeek/{StoryOfWeek.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/StoryOfWeek">
               Read More
             </a>
           </div>
@@ -80,7 +81,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{Profile.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Profile/{Profile.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/Profile">
               Read More
             </a>
           </div>
@@ -93,7 +94,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{Briefs.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Briefs/{Briefs.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/Briefs">
               Read More
             </a>
           </div>
@@ -106,7 +107,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{Tip.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Tip/{Tip.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/Tip">
               Read More
             </a>
           </div>
@@ -119,7 +120,7 @@ const ArticlesElement = () => {
             </p>
             <img className="newsimage" src="/images/goal.png" alt="News" />
             <p className="newsexcerpt">{Column.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Column/{Column.date}">
+            <a className="button button4R tiny readmorelink" href="/newsitem/Column">
               Read More
             </a>
           </div>
