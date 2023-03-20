@@ -432,41 +432,6 @@
     <script>
       $(document).foundation();
 
-      $(document).ready(function ($) {
-        setTimeout(function () {
-          $("#recent-payouts-slider").bjqs({
-            height: 262,
-            width: 372,
-            showcontrols: false,
-            responsive: true,
-          });
-        }, 4000);
-      });
-
-      $(document).ready(function ($) {
-        setTimeout(function () {
-          $("#carryover-slider").bjqs({
-            showcontrols: false,
-            responsive: true,
-            width: 773,
-            height: 135,
-            animspeed: 4000, // the delay between each slide
-          });
-        }, 4000);
-      });
-
-      $(document).ready(function ($) {
-        setTimeout(function () {
-          $("#banner-slider").bjqs({
-            showcontrols: false,
-            responsive: true,
-            width: 773,
-            height: 135,
-            animspeed: 5000, // the delay between each slide
-          });
-        }, 4000);
-      });
-
       $(document).foundation("section", {
         callback: function () {
           var containerPos = $("#newtabs .active").offset().top;

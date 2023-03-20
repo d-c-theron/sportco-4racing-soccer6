@@ -1,12 +1,15 @@
 import React from "react";
 
-const Banner = ({ item }) => {
+const Banner = ({ item, imageLoaded, index, imageIndex, confirmLoaded }) => {
   return (
-    <li key={item.PartitionKey}>
-      <a href={"/pools-and-matches/" + item.pointer}>
-        <img src={"data:image/jpeg;base64," + item.base64} alt={item.PartitionKey} style={{ height: "100%", width: "100%" }} />
-      </a>
-    </li>
+    <a href={"/pools-and-matches/" + item.pointer}>
+      <img
+        style={imageLoaded && index === imageIndex ? { display: "inline" } : { display: "none" }}
+        src={item.url}
+        alt={item.PartitionKey}
+        onLoad={confirmLoaded}
+      />
+    </a>
   );
 };
 
