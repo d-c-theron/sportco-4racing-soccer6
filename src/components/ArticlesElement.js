@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ArticleLoader from "./ArticleLoader";
 
 const ArticlesElement = () => {
   const [PoolOfTheDay, setPoolOfTheDay] = useState({ date: "", title: "", author: "", strap_line: "", raw_date: "" });
@@ -48,82 +49,123 @@ const ArticlesElement = () => {
       <div className="row fifth">
         <div className="large-4 columns">
           <div className="sectionheader">SOCCER 10 OF THE DAY</div>
-          <div className="newsitem">
-            <h3>{PoolOfTheDay.title}</h3>
-            <p className="newsdate">
-              {PoolOfTheDay.date} by {PoolOfTheDay.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{PoolOfTheDay.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/PoolOfTheDay">
-              Read More
-            </a>
-          </div>
+          {PoolOfTheDay.strap_line ? (
+            <div className="newsitem">
+              <h3>{PoolOfTheDay.title}</h3>
+              <p className="newsdate">
+                {PoolOfTheDay.date} by {PoolOfTheDay.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{PoolOfTheDay.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/PoolOfTheDay">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
           <div className="divider"></div>
           <div className="sectionheader">TOP STORY</div>
-          <div className="newsitem">
-            <h3>{StoryOfWeek.title}</h3>
-            <p className="newsdate">
-              {StoryOfWeek.date} by {StoryOfWeek.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{StoryOfWeek.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/StoryOfWeek">
-              Read More
-            </a>
-          </div>
+          {StoryOfWeek.strap_line ? (
+            <div className="newsitem">
+              <h3>{StoryOfWeek.title}</h3>
+              <p className="newsdate">
+                {StoryOfWeek.date} by {StoryOfWeek.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{StoryOfWeek.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/StoryOfWeek">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
+
           <div className="divider"></div>
           <div className="sectionheader">ACE SOCCER 6 POOL</div>
-          <div className="newsitem">
-            <h3>{Profile.title}</h3>
-            <p className="newsdate">
-              {Profile.date} by {Profile.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{Profile.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Profile">
-              Read More
-            </a>
-          </div>
+          {Profile.strap_line ? (
+            <div className="newsitem">
+              <h3>{Profile.title}</h3>
+              <p className="newsdate">
+                {Profile.date} by {Profile.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{Profile.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/Profile">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
+
           <div className="divider"></div>
           <div className="sectionheader">YOU NEED TO KNOW</div>
-          <div className="newsitem">
-            <h3>{Briefs.title}</h3>
-            <p className="newsdate">
-              {Briefs.date} by {Briefs.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{Briefs.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Briefs">
-              Read More
-            </a>
-          </div>
+          {Briefs.strap_line ? (
+            <div className="newsitem">
+              <h3>{Briefs.title}</h3>
+              <p className="newsdate">
+                {Briefs.date} by {Briefs.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{Briefs.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/Briefs">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
+
           <div className="divider"></div>
           <div className="sectionheader">QUOTES OF WEEK</div>
-          <div className="newsitem">
-            <h3>{Tip.title}</h3>
-            <p className="newsdate">
-              {Tip.date} by {Tip.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{Tip.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Tip">
-              Read More
-            </a>
-          </div>
+          {Tip.strap_line ? (
+            <div className="newsitem">
+              <h3>{Tip.title}</h3>
+              <p className="newsdate">
+                {Tip.date} by {Tip.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{Tip.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/Tip">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
+
           <div className="divider"></div>
           <div className="sectionheader">GENERAL</div>
-          <div className="newsitem">
-            <h3>{Column.title}</h3>
-            <p className="newsdate">
-              {Column.date} by {Column.author}
-            </p>
-            <img className="newsimage" src="/images/goal.png" alt="News" />
-            <p className="newsexcerpt">{Column.strap_line}</p>
-            <a className="button button4R tiny readmorelink" href="/newsitem/Column">
-              Read More
-            </a>
-          </div>
+          {Column.strap_line ? (
+            <div className="newsitem">
+              <h3>{Column.title}</h3>
+              <p className="newsdate">
+                {Column.date} by {Column.author}
+              </p>
+              <img className="newsimage" src="/images/goal.png" alt="News" />
+              <p className="newsexcerpt">{Column.strap_line}</p>
+              <a className="button button4R tiny readmorelink" href="/newsitem/Column">
+                Read More
+              </a>
+            </div>
+          ) : (
+            <div className="newsitem">
+              <ArticleLoader />
+            </div>
+          )}
+
           <div className="divider"></div>
         </div>
       </div>
