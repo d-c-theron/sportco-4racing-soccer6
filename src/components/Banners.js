@@ -49,7 +49,7 @@ const Banners = () => {
         {ImageLoaded ? null : (
           <div
             style={{
-              background: "white",
+              background: "#d7e5d7",
               height: "135px",
               width: "773px",
             }}

@@ -1,7 +1,7 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banners from "./Banners";
-import ArticlesElement from "./ArticlesElement";
-import PoolsWidget from "./PoolsWidget";
+import HomePage from "./HomePage";
 import PoolPage from "./PoolPage";
 import ResultsPage from "./ResultsPage";
 import TipsPage from "./TipsPage";
@@ -9,130 +9,66 @@ import ArticlePage from "./ArticlePage";
 import FormGuidePage from "./FormGuidePage";
 import HowtoPage from "./HowtoPage";
 import InfoPage from "./InfoPage";
-import Route from "./Route";
 
 const App = () => {
   return (
     <div className="large-10 columns">
-      <Banners />
-      <Route path="/">
-        <PoolsWidget />
-        <ArticlesElement />
-      </Route>
-      <Route path="/pools-and-matches/soccer-6">
-        <PoolPage pool_id={6} />
-      </Route>
-      <Route path="/pools-and-matches/soccer6-advanced">
-        <PoolPage pool_id={6} />
-      </Route>
-      <Route path="/pools-and-matches/soccer-10">
-        <PoolPage pool_id={10} />
-      </Route>
-      <Route path="/pools-and-matches/soccer10-advanced">
-        <PoolPage pool_id={10} />
-      </Route>
-      <Route path="/pools-and-matches/soccer-13">
-        <PoolPage pool_id={13} />
-      </Route>
-      <Route path="/pools-and-matches/soccer13-advanced">
-        <PoolPage pool_id={13} />
-      </Route>
-      <Route path="/pools-and-matches/soccer-4">
-        <PoolPage pool_id={4} />
-      </Route>
-      <Route path="/pools-and-matches/soccer4-advanced">
-        <PoolPage pool_id={4} />
-      </Route>
-      <Route path="/pools-and-matches/soccer-13-extra">
-        <PoolPage pool_id={16} />
-      </Route>
-      <Route path="/pools-and-matches/soccer16-advanced">
-        <PoolPage pool_id={16} />
-      </Route>
-      <Route path="/pools-and-matches/megastrike">
-        <PoolPage pool_id={12} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-6">
-        <ResultsPage pool_id={6} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-10">
-        <ResultsPage pool_id={10} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-13">
-        <ResultsPage pool_id={13} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-4">
-        <ResultsPage pool_id={4} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-13-extra">
-        <ResultsPage pool_id={16} />
-      </Route>
-      <Route path="/results-and-payouts/soccer-12">
-        <ResultsPage pool_id={12} />
-      </Route>
-      <Route path="/top-tips/soccer-6">
-        <TipsPage pool_id={6} />
-      </Route>
-      <Route path="/top-tips/soccer-10">
-        <TipsPage pool_id={10} />
-      </Route>
-      <Route path="/top-tips/soccer-13">
-        <TipsPage pool_id={13} />
-      </Route>
-      <Route path="/top-tips/soccer-4">
-        <TipsPage pool_id={4} />
-      </Route>
-      <Route path="/top-tips/soccer-13-extra">
-        <TipsPage pool_id={16} />
-      </Route>
-      <Route path="/newsitem/PoolOfTheDay">
-        <ArticlePage article={"PoolOfTheDay"} />
-      </Route>
-      <Route path="/newsitem/StoryOfWeek">
-        <ArticlePage article={"StoryOfWeek"} />
-      </Route>
-      <Route path="/newsitem/Profile">
-        <ArticlePage article={"Profile"} />
-      </Route>
-      <Route path="/newsitem/Briefs">
-        <ArticlePage article={"Briefs"} />
-      </Route>
-      <Route path="/newsitem/Tip">
-        <ArticlePage article={"Tip"} />
-      </Route>
-      <Route path="/newsitem/Column">
-        <ArticlePage article={"Column"} />
-      </Route>
-      <Route path="/form-guides/head-2-head">
-        <FormGuidePage />
-      </Route>
-      <Route path="/how-to-play/soccer-4">
-        <HowtoPage pool_id={4} />
-      </Route>
-      <Route path="/how-to-play/soccer-6">
-        <HowtoPage pool_id={6} />
-      </Route>
-      <Route path="/how-to-play/soccer-10">
-        <HowtoPage pool_id={10} />
-      </Route>
-      <Route path="/how-to-play/soccer-13">
-        <HowtoPage pool_id={13} />
-      </Route>
-      <Route path="/how-to-play/soccer-13x">
-        <HowtoPage pool_id={16} />
-      </Route>
-      <Route path="/how-to-play/megastrike">
-        <HowtoPage pool_id={12} />
-      </Route>
-      <Route path="/about-us">
-        <InfoPage page={"about-us"} />
-      </Route>
-      <Route path="/contact-us">
-        <InfoPage page={"contact-us"} />
-      </Route>
-      <Route path="/rules">
-        <InfoPage page={"rules"} />
-      </Route>
+      <BrowserRouter>
+        <Banners />
+        <Routes>
+          <Route path="/" element={<HomePage />} exact></Route>
+          <Route path="pools-and-matches">
+            <Route path="soccer-6" element={<PoolPage pool_id={6} />}></Route>
+            <Route path="soccer6-advanced" element={<PoolPage pool_id={6} />}></Route>
+            <Route path="soccer-10" element={<PoolPage pool_id={10} />}></Route>
+            <Route path="soccer10-advanced" element={<PoolPage pool_id={10} />}></Route>
+            <Route path="soccer-13" element={<PoolPage pool_id={13} />}></Route>
+            <Route path="soccer13-advanced" element={<PoolPage pool_id={13} />}></Route>
+            <Route path="soccer-4" element={<PoolPage pool_id={4} />}></Route>
+            <Route path="soccer4-advanced" element={<PoolPage pool_id={4} />}></Route>
+            <Route path="soccer-13-extra" element={<PoolPage pool_id={16} />}></Route>
+            <Route path="soccer16-advanced" element={<PoolPage pool_id={16} />}></Route>
+            <Route path="megastrike" element={<PoolPage pool_id={12} />}></Route>
+          </Route>
+          <Route path="results-and-payouts">
+            <Route path="soccer-6" element={<ResultsPage pool_id={6} />}></Route>
+            <Route path="soccer-10" element={<ResultsPage pool_id={10} />}></Route>
+            <Route path="soccer-13" element={<ResultsPage pool_id={13} />}></Route>
+            <Route path="soccer-4" element={<ResultsPage pool_id={4} />}></Route>
+            <Route path="soccer-13-extra" element={<ResultsPage pool_id={16} />}></Route>
+            <Route path="megastrike" element={<ResultsPage pool_id={12} />}></Route>
+          </Route>
+          <Route path="top-tips">
+            <Route path="soccer-6" element={<TipsPage pool_id={6} />}></Route>
+            <Route path="soccer-10" element={<TipsPage pool_id={10} />}></Route>
+            <Route path="soccer-13" element={<TipsPage pool_id={13} />}></Route>
+            <Route path="soccer-4" element={<TipsPage pool_id={4} />}></Route>
+            <Route path="soccer-13-extra" element={<TipsPage pool_id={16} />}></Route>
+          </Route>
+          <Route path="how-to-play">
+            <Route path="soccer-6" element={<HowtoPage pool_id={6} />}></Route>
+            <Route path="soccer-10" element={<HowtoPage pool_id={10} />}></Route>
+            <Route path="soccer-13" element={<HowtoPage pool_id={13} />}></Route>
+            <Route path="soccer-4" element={<HowtoPage pool_id={4} />}></Route>
+            <Route path="soccer-13x" element={<HowtoPage pool_id={16} />}></Route>
+            <Route path="megastrike" element={<HowtoPage pool_id={12} />}></Route>
+          </Route>
+          <Route path="newsitem">
+            <Route path="PoolOfTheDay" element={<ArticlePage article={"PoolOfTheDay"} />}></Route>
+            <Route path="StoryOfWeek" element={<ArticlePage article={"StoryOfWeek"} />}></Route>
+            <Route path="Profile" element={<ArticlePage article={"Profile"} />}></Route>
+            <Route path="Briefs" element={<ArticlePage article={"Briefs"} />}></Route>
+            <Route path="Tip" element={<ArticlePage article={"Tip"} />}></Route>
+            <Route path="Column" element={<ArticlePage article={"Column"} />}></Route>
+          </Route>
+          <Route path="form-guides">
+            <Route path="head-2-head" element={<FormGuidePage />}></Route>
+          </Route>
+          <Route path="about-us" element={<InfoPage page={"about-us"} />}></Route>
+          <Route path="contact-us" element={<InfoPage page={"contact-us"} />}></Route>
+          <Route path="rules" element={<InfoPage page={"rules"} />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
