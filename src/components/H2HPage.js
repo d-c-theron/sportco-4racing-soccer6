@@ -56,31 +56,30 @@ const H2HPage = () => {
       {H2H.kick_off_time ? (
         <>
           <div className="row">
-            <div>
-              <h3 style={{ textAlign: "center", margin: "3px" }}>
-                <span style={{ color: "seagreen" }}>{H2H.team_a_name}</span> v <span style={{ color: "royalblue" }}>{H2H.team_b_name}</span>
-              </h3>
-              <h5 style={{ textAlign: "center", margin: "3px" }}>{resolve_comp(H2H.comp_country, H2H.game_week, H2H.competition)}</h5>
-              {H2H.aggregate !== "" ? <h6 style={{ textAlign: "center", margin: "3px" }}>Aggregate: {H2H.aggregate}</h6> : null}
-              {H2H.venue !== "" ? (
-                <h6 style={{ textAlign: "center", margin: "3px" }}>
-                  {H2H.venue}, {pretty_kickoff(H2H.kick_off_time, H2H.program_date)}
-                </h6>
-              ) : (
-                <h6 style={{ textAlign: "center", margin: "3px" }}>{pretty_kickoff(H2H.kick_off_time, H2H.program_date)}</h6>
-              )}
-              <div className="small-6 columns">
-                <center>
-                  <TeamLogo id={H2H.team_a_id} name={H2H.team_a_name} small={false} />
-                </center>
-              </div>
-              <div className="small-6 columns">
-                <center>
-                  <TeamLogo id={H2H.team_b_id} name={H2H.team_a_name} small={false} />
-                </center>
-              </div>
+            <h3 style={{ textAlign: "center", margin: "3px" }}>
+              <span style={{ color: "seagreen" }}>{H2H.team_a_name}</span> v <span style={{ color: "royalblue" }}>{H2H.team_b_name}</span>
+            </h3>
+            <h5 style={{ textAlign: "center", margin: "3px" }}>{resolve_comp(H2H.comp_country, H2H.game_week, H2H.competition)}</h5>
+            {H2H.aggregate !== "" ? <h6 style={{ textAlign: "center", margin: "3px" }}>Aggregate: {H2H.aggregate}</h6> : null}
+            {H2H.venue !== "" ? (
+              <h6 style={{ textAlign: "center", margin: "3px" }}>
+                {H2H.venue}, {pretty_kickoff(H2H.kick_off_time, H2H.program_date)}
+              </h6>
+            ) : (
+              <h6 style={{ textAlign: "center", margin: "3px" }}>{pretty_kickoff(H2H.kick_off_time, H2H.program_date)}</h6>
+            )}
+            <div className="small-6 columns">
+              <center>
+                <TeamLogo id={H2H.team_a_id} name={H2H.team_a_name} small={false} />
+              </center>
+            </div>
+            <div className="small-6 columns">
+              <center>
+                <TeamLogo id={H2H.team_b_id} name={H2H.team_a_name} small={false} />
+              </center>
             </div>
           </div>
+          <br />
           <div className="row">
             <div className="large-12 columns">
               <table style={{ width: "100%" }}>

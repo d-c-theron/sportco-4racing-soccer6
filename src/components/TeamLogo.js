@@ -10,7 +10,8 @@ const TeamLogo = ({ id, name, small }) => {
       const loadTeamLogo = async () => {
         const temp = (await (await fetch(`/api/GetLogo/${id}`)).json()).value;
         if (temp.length > 0) {
-          setBase64(temp.base64);
+          console.log(temp[0]);
+          setBase64(temp[0].base64);
         }
       };
       loadTeamLogo();
