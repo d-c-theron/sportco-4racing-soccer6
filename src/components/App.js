@@ -9,6 +9,7 @@ import ArticlePage from "./ArticlePage";
 import FormGuidePage from "./FormGuidePage";
 import HowtoPage from "./HowtoPage";
 import InfoPage from "./InfoPage";
+import H2HPage from "./H2HPage";
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="about-us" element={<InfoPage page={"about-us"} />}></Route>
           <Route path="contact-us" element={<InfoPage page={"contact-us"} />}></Route>
           <Route path="rules" element={<InfoPage page={"rules"} />}></Route>
+          <Route path="h2h/:id" element={<H2HPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
