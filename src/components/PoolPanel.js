@@ -1,5 +1,6 @@
 import React from "react";
 import PoolItem from "./PoolItem";
+import PoolItemLoader from "./PoolItemLoader";
 
 const get_pool_icon = (panel_number) => {
   if (panel_number === 1) {
@@ -50,9 +51,19 @@ const PoolPanel = ({ pools, panel_selected, panel_number, volume }) => {
         </a>
       </p>
       <div className="content" data-section-content>
-        {volume===-1 ? <div className="panel">Loading...</div>: volume === 0 ? <div className="panel">No pool currently open.</div> : ""}
+        {volume === -1 ? (
+          <>
+            <PoolItemLoader />
+            <br />
+            <PoolItemLoader />
+          </>
+        ) : volume === 0 ? (
+          <div className="panel">No pool currently open.</div>
+        ) : (
+          ""
+        )}
         {pools.map((item) => (
-          <PoolItem item={item}/>
+          <PoolItem item={item} />
         ))}
       </div>
     </section>

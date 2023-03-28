@@ -11,8 +11,12 @@ const H2HPage = () => {
   const { id } = useParams();
 
   let table_row_previous = -1;
-  const renderTableRowWithPrevious = (table_row) => {
-    let temp = table_row_previous;
+  let current_table = "";
+  const renderTableRowWithPrevious = (table_row, table) => {
+    let temp = 0;
+    if (table === current_table) {
+      temp = table_row_previous;
+    }
     table_row_previous = parseInt(table_row.position);
     return <TableRow item={table_row} previous={temp} team_a_id={H2H.team_a_id} team_b_id={H2H.team_b_id} />;
   };
@@ -194,11 +198,41 @@ const H2HPage = () => {
                       <td className="centertext">PTS</td>
                     </tr>
                   </thead>
-                  <tbody>{H2H.league_standings_a.league_standings.map((table_row) => renderTableRowWithPrevious(table_row))}</tbody>
+                  <tbody>{H2H.league_standings_a.league_standings.map((table_row) => renderTableRowWithPrevious(table_row, H2H.league_standings_a.league_title))}</tbody>
                 </table>
               </div>
             </div>
           ) : null}
+          {H2H.league_standings_b ? (
+            <div className="row">
+              <div className="large-12 columns">
+                <table style={{ width: "100%", borderSpacing: "0px" }}>
+                  <thead>
+                    <tr>
+                      <td colSpan={10} style={{ textAlign: "center" }}>
+                        {H2H.league_standings_b.league_title} Standings
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> </td>
+                      <td className="hideForSmall">&nbsp;</td>
+                      <td> </td>
+                      <td className="centertext">P</td>
+                      <td className="centertext">W</td>
+                      <td className="centertext">D</td>
+                      <td className="centertext">L</td>
+                      <td className="hideForSmall centertext">GF</td>
+                      <td className="hideForSmall centertext">GA</td>
+                      <td className="centertext">PTS</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {H2H.league_standings_b.league_standings.map((table_row) => renderTableRowWithPrevious(table_row, H2H.league_standings_b.league_title))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : null}{" "}
         </>
       ) : (
         <div>Loading...</div>

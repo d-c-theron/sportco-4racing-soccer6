@@ -4,6 +4,7 @@ import S10Tips from "./S10Tips";
 import S13Tips from "./S13Tips";
 import S4Tips from "./S4Tips";
 import S13XTips from "./S13XTips";
+import PoolItemWideLoaderLarge from "./PoolItemWideLoaderLarge";
 
 const TipsPage = ({ pool_id }) => {
   const [Tips, setTips] = useState([]);
@@ -71,7 +72,7 @@ const TipsPage = ({ pool_id }) => {
           <img src="/images/Mark Gleeson.jpg" alt="Mark Gleeson" width="50" height="76" style={{ float: "right", padding: "2px" }} />
         </h1>
         {TipsVolume === -1 ? (
-          <div className="panel">Loading...</div>
+          <PoolItemWideLoaderLarge />
         ) : TipsVolume === 0 ? (
           <div classNameName="panel">No tips currently available for this pool.</div>
         ) : (

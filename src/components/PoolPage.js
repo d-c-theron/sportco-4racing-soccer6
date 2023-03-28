@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PoolItemWide from "./PoolItemWide";
+import PoolItemWideLoaderLarge from "./PoolItemWideLoaderLarge";
 
 const PoolPage = ({ pool_id }) => {
   const [Pools, setPools] = useState([]);
@@ -66,7 +67,7 @@ const PoolPage = ({ pool_id }) => {
     <div className="row second">
       <div className="large-12 columns">
         <h1>{PageName}</h1>
-        {PoolVolume === -1 ? <div className="panel">Loading...</div> : PoolVolume === 0 ? <div classNameName="panel">No pool currently open.</div> : ""}
+        {PoolVolume === -1 ? <PoolItemWideLoaderLarge /> : PoolVolume === 0 ? <div classNameName="panel">No pool currently open.</div> : ""}
         {Pools.map((item) => (
           <PoolItemWide item={item} />
         ))}
