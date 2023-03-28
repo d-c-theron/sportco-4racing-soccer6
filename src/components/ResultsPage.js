@@ -6,6 +6,7 @@ import S4Result from "./S4Result";
 import S13XResult from "./S13XResult";
 import MegastrikeResult from "./MegastrikeResult";
 import PendingResult from "./PendingResult";
+import PoolItemWideLoaderLarge from "./PoolItemWideLoaderLarge";
 
 const ResultsPage = ({ pool_id }) => {
   const [Results, setResults] = useState([]);
@@ -127,9 +128,15 @@ const ResultsPage = ({ pool_id }) => {
   return (
     <div className="row second">
       <div className="large-12 columns">
-        <h1>{PageName}</h1>
-        {PendingResults.map((item) => renderPendingResultType(item))}
-        {Results.map((item) => renderResultType(item))}
+        {Results.length > 0 ? (
+          <>
+            <h1>{PageName}</h1>
+            {PendingResults.map((item) => renderPendingResultType(item))}
+            {Results.map((item) => renderResultType(item))}
+          </>
+        ) : (
+          <PoolItemWideLoaderLarge />
+        )}
       </div>
     </div>
   );
