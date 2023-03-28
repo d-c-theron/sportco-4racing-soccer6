@@ -128,15 +128,9 @@ const ResultsPage = ({ pool_id }) => {
   return (
     <div className="row second">
       <div className="large-12 columns">
-        {PageName ? (
-          <PoolItemWideLoaderLarge />
-        ) : (
-          <>
-            <h1>{PageName}</h1>
-            {PendingResults.map((item) => renderPendingResultType(item))}
-            {Results.map((item) => renderResultType(item))}
-          </>
-        )}
+        <h1>{PageName}</h1>
+        {PendingResults.map((item) => renderPendingResultType(item))}
+        {Results.map((item) => renderResultType(item))}
       </div>
     </div>
   );
