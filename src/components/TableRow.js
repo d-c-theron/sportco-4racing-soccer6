@@ -35,7 +35,7 @@ const TableRow = ({ item, previous, team_a_id, team_b_id }) => {
         </tr>
       ) : null}
       {item.team_id === team_a_id ? (
-        <tr style={{ backgroundColor: "royalblue" }}>
+        <tr style={{ backgroundColor: "seagreen" }}>
           <td style={{ width: "1%", textAlign: "center", color: "white" }}>{item.position}.</td>
           <td className="hideForSmall" style={{ padding: "1px", width: "34px" }}>
             <TeamLogo id={item.team_id} name={item.team_name} small={true} />
@@ -51,7 +51,7 @@ const TableRow = ({ item, previous, team_a_id, team_b_id }) => {
         </tr>
       ) : null}
       {item.team_id === team_b_id ? (
-        <tr style={{ backgroundColor: "seagreen" }}>
+        <tr style={{ backgroundColor: "royalblue" }}>
           <td style={{ width: "1%", textAlign: "center" }}>{item.position}.</td>
           <td className="hideForSmall" style={{ padding: "1px", width: "34px" }}>
             <TeamLogo id={item.team_id} name={item.team_name} small={true} />
