@@ -6,7 +6,6 @@ import S4Result from "./S4Result";
 import S13XResult from "./S13XResult";
 import MegastrikeResult from "./MegastrikeResult";
 import PendingResult from "./PendingResult";
-import PoolItemWideLoaderLarge from "./PoolItemWideLoaderLarge";
 
 const ResultsPage = ({ pool_id }) => {
   const [Results, setResults] = useState([]);
