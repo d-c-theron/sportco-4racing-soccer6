@@ -8,17 +8,17 @@ import TableRow from "./TableRow";
 
 const H2HPage = () => {
   const [H2H, setH2H] = useState({});
+  let table_row_previous = -1;
   const { id } = useParams();
 
-  let table_row_previous = -1;
-  let current_table = "";
-  const renderTableRowWithPrevious = (table_row, table) => {
-    let temp = 0;
-    if (table === current_table) {
-      temp = table_row_previous;
-    }
+  const renderTableRowWithPrevious = (table_row) => {
+    let temp = table_row_previous;
     table_row_previous = parseInt(table_row.position);
     return <TableRow item={table_row} previous={temp} team_a_id={H2H.team_a_id} team_b_id={H2H.team_b_id} />;
+  };
+
+  const resetTable = () => {
+    table_row_previous = -1;
   };
 
   const resolve_comp = (comp_country, game_week, competition) => {
@@ -198,13 +198,14 @@ const H2HPage = () => {
                       <td className="centertext">PTS</td>
                     </tr>
                   </thead>
-                  <tbody>{H2H.league_standings_a.league_standings.map((table_row) => renderTableRowWithPrevious(table_row, H2H.league_standings_a.league_title))}</tbody>
+                  <tbody>{H2H.league_standings_a.league_standings.map((table_row) => renderTableRowWithPrevious(table_row))}</tbody>
                 </table>
               </div>
             </div>
           ) : null}
           {H2H.league_standings_b ? (
             <div className="row">
+              {resetTable()}
               <div className="large-12 columns">
                 <table style={{ width: "100%", borderSpacing: "0px" }}>
                   <thead>
@@ -226,9 +227,7 @@ const H2HPage = () => {
                       <td className="centertext">PTS</td>
                     </tr>
                   </thead>
-                  <tbody>
-                    {H2H.league_standings_b.league_standings.map((table_row) => renderTableRowWithPrevious(table_row, H2H.league_standings_b.league_title))}
-                  </tbody>
+                  <tbody>{H2H.league_standings_b.league_standings.map((table_row) => renderTableRowWithPrevious(table_row))}</tbody>
                 </table>
               </div>
             </div>
