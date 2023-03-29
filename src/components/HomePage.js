@@ -20,13 +20,13 @@ const HomePage = () => {
         <div className="large-6 columns smallpaddingright">
           <div className="sectionheader nospace">General Info</div>
           <div className="flex-video">
-            <iframe width={252} height={206} frameBorder={0} src="https://www.youtube.com/embed/2sWEJb_6jZE?rel=0"></iframe>
+            <iframe width={252} height={206} frameBorder={0} src="https://www.youtube.com/embed/2sWEJb_6jZE?rel=0" title="General Info"></iframe>
           </div>
         </div>
         <div className="large-6 columns smallpaddingleft">
           <div className="sectionheader nospace">PROMO</div>
           <div className="flex-video">
-            <iframe width={252} height={206} frameBorder={0} src="https://www.youtube.com/embed/WjWXNPK0G_Y?rel=0"></iframe>
+            <iframe width={252} height={206} frameBorder={0} src="https://www.youtube.com/embed/WjWXNPK0G_Y?rel=0" title="General Info"></iframe>
           </div>
         </div>
       </div>
