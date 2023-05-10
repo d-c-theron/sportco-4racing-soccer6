@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/d-c-theron/sportco-4racing-soccer6.git
+	pushurl = https://github.com/soccer64racing/soccer6.git
+[user]
+	name = =
